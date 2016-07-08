@@ -52,9 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     text.setText("로그인");
                     rePw.setVisibility(View.VISIBLE);
                     btn.setText("회원가입");
-                    RelativeLayout.LayoutParams layout
-                            = new RelativeLayout.LayoutParams(btn.getLayoutParams());
-                    layout.addRule(RelativeLayout.BELOW,rePw.getId());
+
                 }
             }
             //btn이 눌렸을 경우
