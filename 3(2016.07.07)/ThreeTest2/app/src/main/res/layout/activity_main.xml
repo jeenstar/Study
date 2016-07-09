@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/edit_text"
+        android:singleLine="true"
+        android:hint="텍스트를 입력하세요."/>
+
+    <EditText
+        android:id="@+id/color"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/edit_text"
+        android:singleLine="true"
+        android:hint="색깔을 입력하세요.(RGB형식)"/>
+
+    <EditText
+        android:id="@+id/size"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/edit_text"
+        android:singleLine="true"
+        android:hint="사이즈를 입력하세요.(100 이하)"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="출력"
+        android:textSize="18dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000"/>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="결과값"/>
+</LinearLayout>
