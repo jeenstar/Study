@@ -12,11 +12,11 @@ import android.widget.Toast;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
-    EditText text;
-    EditText color;
-    EditText size;
-    Button btn;
-    TextView result;
+    private EditText text;
+    private EditText color;
+    private EditText size;
+    private Button btn;
+    private TextView result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +34,25 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener listener = new View.OnClickListener(){
         @Override
         public void onClick(View view) {
+
+
+            /*
+            String str = text.getText().toString();
+            int num;
+            try {
+            num=Integer.parseInt(str);
+            }catch(Exception e){
+            Toast.makeText(MainActivity.this,"숫자입력하thㅔ여",Toast.LENGTH_SHORT).show();
+
+            }
+
+
+             */
             if(view.getId() == R.id.btn){
                 String txt = text.getText().toString();
                 String clr = color.getText().toString();
                 String sz = size.getText().toString();
-                
+
                 if(txt.equals("") || clr.equals("") || sz.equals("")){
                     Toast.makeText(MainActivity.this, "빈칸을 채워주세요.", Toast.LENGTH_SHORT).show();
                 }
