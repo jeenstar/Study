@@ -34,18 +34,33 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener listener = new View.OnClickListener(){
         @Override
         public void onClick(View view) {
-            if(view.getId()==R.id.btn){
+            if(view.getId()==R.id.btn) {
                 String txt = text.getText().toString();
                 String clr = color.getText().toString();
                 String sz = size.getText().toString();
-                try {
+                int num;
+                if (txt.equals("") || clr.equals("") || sz.equals("")) {
+                    Toast.makeText(MainActivity.this, "빈칸을 채워주세요.", Toast.LENGTH_SHORT).show();
+                } else {
                     result.setText(txt);
-                    result.setTextColor(Color.parseColor(clr));
-                    result.setTextSize(Integer.parseInt(sz));
-                }catch(Exception e){
-                    Toast.makeText(MainActivity.this,"숫자입력하thㅔ여",Toast.LENGTH_SHORT).show();
-                }}
+                    try {
+                        result.setTextColor(Color.parseColor(clr));
+                        num = Integer.parseInt(sz);
+                        if (num > 100)
+                            Toast.makeText(MainActivity.this, "텍스트 사이즈는 100이하입니다."
+                                    , Toast.LENGTH_SHORT).show();
+                        else
+                            result.setTextSize(num);
 
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(MainActivity.this, "텍스트 사이즈는 100이하입니다."
+                                , Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        Toast.makeText(MainActivity.this, "#000000 RGB형식을 지켜주세요."
+                                , Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
 
 
             /*if(view.getId() == R.id.btn){
