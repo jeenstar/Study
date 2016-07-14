@@ -34,42 +34,39 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener listener = new View.OnClickListener(){
         @Override
         public void onClick(View view) {
+            if(view.getId()==R.id.btn){
+                String txt = text.getText().toString();
+                String clr = color.getText().toString();
+                String sz = size.getText().toString();
+                try {
+                    result.setText(txt);
+                    result.setTextColor(Color.parseColor(clr));
+                    result.setTextSize(Integer.parseInt(sz));
+                }catch(Exception e){
+                    Toast.makeText(MainActivity.this,"숫자입력하thㅔ여",Toast.LENGTH_SHORT).show();
+                }}
 
 
-            /*
-            String str = text.getText().toString();
-            int num;
-            try {
-            num=Integer.parseInt(str);
-            }catch(Exception e){
-            Toast.makeText(MainActivity.this,"숫자입력하thㅔ여",Toast.LENGTH_SHORT).show();
 
-            }
-
-
-             */
-            if(view.getId() == R.id.btn){
+            /*if(view.getId() == R.id.btn){
                 String txt = text.getText().toString();
                 String clr = color.getText().toString();
                 String sz = size.getText().toString();
 
                 if(txt.equals("") || clr.equals("") || sz.equals("")){
                     Toast.makeText(MainActivity.this, "빈칸을 채워주세요.", Toast.LENGTH_SHORT).show();
-                }
-                else if(clr.length() != 7 || clr.charAt(0) != '#'){
+                }else if(clr.length() != 7 || clr.charAt(0) != '#'){
                     Toast.makeText(MainActivity.this, "#000000 RGB형식을 지켜주세요."
                             , Toast.LENGTH_SHORT).show();
-                }
-                else if(!Pattern.matches("^[0-9]*$",sz) || Integer.parseInt(sz) > 100){
+                }else if(!Pattern.matches("^[0-9]*$",sz) || Integer.parseInt(sz) > 100){
                     Toast.makeText(MainActivity.this, "텍스트 사이즈는 100 이하입니다."
                             , Toast.LENGTH_SHORT).show();
-                }
-                else{
+                }else{
                     result.setText(txt);
                     result.setTextSize(Integer.parseInt(sz));
                     result.setTextColor(Color.parseColor(clr));
                 }
-            }
+            }*/
         }
     };
 
