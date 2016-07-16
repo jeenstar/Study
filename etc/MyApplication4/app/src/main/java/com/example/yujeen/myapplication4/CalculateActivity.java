@@ -3,6 +3,9 @@ package com.example.yujeen.myapplication4;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,13 +20,16 @@ public class CalculateActivity extends AppCompatActivity{
 
     private TextView title_name;
     private TextView window;
-    private int count_dot=0;
-    private String str="";
+    private Button[] btn = new Button[18];
+
     private int[] id_Btn = {R.id.btn0,R.id.btn1,R.id.btn2,R.id.btn3,R.id.btn4
             ,R.id.btn5,R.id.btn6,R.id.btn7,R.id.btn8,R.id.btn9
             ,R.id.btn_plus,R.id.btn_minus,R.id.btn_multi,R.id.btn_div
+
             ,R.id.btn_dot,R.id.btn_delete,R.id.btn_ac,R.id.btn_cal};
-    private Button[] btn = new Button[18];
+
+    private String str="";
+    private int count_dot=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,12 +52,31 @@ public class CalculateActivity extends AppCompatActivity{
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        SubMenu sub = menu.addSubMenu("color");
+        sub.add(0,1,0,"red");
+        sub.add(0,2,0,"orange");
+        sub.add(0,3,0,"yellow");
+        sub.add(0,4,0,"green");
+        sub.add(0,5,0,"blue");
+        sub.add(0,6,0,"purple");
+        sub.add(0,7,0,"mint");
+        sub.add(0,8,0,"pink");
+        return true;
+    }
+
     View.OnClickListener listener = new View.OnClickListener(){
         @Override
         public void onClick(View view) {
           switch(view.getId()){
               case R.id.btn0:
-                  str = str + "0";break;
+                  if(!str.substring(0).equals("0"))
+                    str = str + "0";
+                  else
+                      Toast.makeText(CalculateActivity.this, "0 입력 안시켜줄거야!!"
+                              , Toast.LENGTH_SHORT).show();
+                  break;
               case R.id.btn1:
                   str = str + "1";break;
               case R.id.btn2:
@@ -96,8 +121,28 @@ public class CalculateActivity extends AppCompatActivity{
                   str="";
                   count_dot=0;
                   break;
+              case R.id.btn_plus:
 
+
+                  break;
+              case R.id.btn_minus:
+
+
+                  break;
+              case R.id.btn_multi:
+
+
+                  break;
+              case R.id.btn_div:
+
+
+                  break;
+              case R.id.btn_cal:
+
+
+                  break;
           }
+
             window.setText(str);
         }
     };
