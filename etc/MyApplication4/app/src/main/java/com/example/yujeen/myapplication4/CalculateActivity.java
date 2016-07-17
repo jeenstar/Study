@@ -1,6 +1,8 @@
 package com.example.yujeen.myapplication4;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -20,6 +22,7 @@ public class CalculateActivity extends AppCompatActivity{
 
     private TextView title_name;
     private TextView window;
+
     private Button[] btn = new Button[18];
 
     private int[] id_Btn = {R.id.btn0,R.id.btn1,R.id.btn2,R.id.btn3,R.id.btn4
@@ -30,12 +33,16 @@ public class CalculateActivity extends AppCompatActivity{
 
     private String str="";
     private int count_dot=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
         title_name = (TextView)findViewById(R.id.title_name);
         window = (TextView)findViewById(R.id.window);
+
+
+
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
 
@@ -64,6 +71,80 @@ public class CalculateActivity extends AppCompatActivity{
         sub.add(0,7,0,"mint");
         sub.add(0,8,0,"pink");
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case 1:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_red);
+                }
+
+                window.setBackgroundResource(R.color.colorWindow_red);
+                return true;
+            case 2:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_orange);
+                }
+                window.setBackgroundResource(R.color.colorWindow_orange);
+                return true;
+            case 3:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_yellow);
+                }
+                window.setBackgroundResource(R.color.colorWindow_yellow);
+                return true;
+            case 4:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_green);
+                }
+                window.setBackgroundResource(R.color.colorWindow_green);
+                return true;
+            case 5:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_blue);
+                }
+                window.setBackgroundResource(R.color.colorWindow_blue);
+                return true;
+            case 6:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_purple);
+                }
+                window.setBackgroundResource(R.color.colorWindow_purple);
+                return true;
+            case 7:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_mint);
+                }
+                window.setBackgroundResource(R.color.colorWindow_mint);
+                return true;
+            case 8:
+                for (int i = 0; i < btn.length; i++) {
+                    if(i==15)
+                        i=16;
+                    btn[i].setBackgroundResource(R.color.colorButton_pink);
+                }
+                window.setBackgroundResource(R.color.colorWindow_pink);
+                return true;
+
+
+        }
+        return false;
     }
 
     View.OnClickListener listener = new View.OnClickListener(){

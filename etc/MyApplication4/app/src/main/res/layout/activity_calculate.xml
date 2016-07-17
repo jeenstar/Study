@@ -40,7 +40,7 @@
         android:layout_height="100sp"
         android:layout_below="@id/title_text2"
         android:layout_marginTop="20sp"
-        android:background="#b29afcef"
+        android:background="@color/colorWindow"
         android:gravity="bottom|right"
         android:padding="10sp"
         android:text="0"
@@ -52,7 +52,7 @@
         android:layout_height="70sp"
         android:layout_below="@id/window"
         android:layout_marginTop="10sp"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="1"
         android:textSize="25sp" />
 
@@ -62,7 +62,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn1"
         android:layout_toRightOf="@id/btn1"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="2"
         android:textSize="25sp" />
 
@@ -72,7 +72,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn1"
         android:layout_toRightOf="@id/btn2"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="3"
         android:textSize="25sp" />
 
@@ -82,7 +82,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn1"
         android:layout_toRightOf="@id/btn3"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="+"
         android:textSize="25sp" />
 
@@ -93,7 +93,7 @@
         android:layout_alignBottom="@id/btn1"
         android:layout_toRightOf="@id/btn_plus"
         android:background="@android:drawable/ic_input_delete"
-        android:backgroundTint="#c7d4f7f4" />
+        android:backgroundTint="@color/colorButton" />
 
 
     <Button
@@ -101,7 +101,7 @@
         android:layout_width="70sp"
         android:layout_height="70sp"
         android:layout_below="@id/btn1"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="4"
         android:textSize="25sp" />
 
@@ -111,7 +111,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn4"
         android:layout_toRightOf="@id/btn4"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="5"
         android:textSize="25sp" />
 
@@ -121,7 +121,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn4"
         android:layout_toRightOf="@id/btn5"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="6"
         android:textSize="25sp" />
 
@@ -131,7 +131,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn4"
         android:layout_toRightOf="@id/btn6"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="-"
         android:textSize="25sp" />
 
@@ -141,7 +141,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn4"
         android:layout_toRightOf="@id/btn_minus"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="AC"
         android:textSize="25sp" />
 
@@ -150,7 +150,7 @@
         android:layout_width="70sp"
         android:layout_height="70sp"
         android:layout_below="@id/btn4"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="7"
         android:textSize="25sp" />
 
@@ -160,7 +160,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn7"
         android:layout_toRightOf="@id/btn7"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="8"
         android:textSize="25sp" />
 
@@ -170,7 +170,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn7"
         android:layout_toRightOf="@id/btn8"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="9"
         android:textSize="25sp" />
 
@@ -180,7 +180,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn7"
         android:layout_toRightOf="@id/btn9"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="x"
         android:textSize="25sp" />
 
@@ -190,7 +190,7 @@
         android:layout_height="140sp"
         android:layout_alignTop="@id/btn7"
         android:layout_toRightOf="@id/btn_multi"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="="
         android:textSize="25sp" />
 
@@ -199,7 +199,7 @@
         android:layout_width="140sp"
         android:layout_height="70sp"
         android:layout_below="@id/btn7"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="0"
         android:textSize="25sp" />
 
@@ -209,7 +209,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn0"
         android:layout_toRightOf="@id/btn0"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="."
         android:textSize="25sp" />
 
@@ -219,7 +219,7 @@
         android:layout_height="70sp"
         android:layout_alignBottom="@id/btn0"
         android:layout_toRightOf="@id/btn_dot"
-        android:background="#c7d4f7f4"
+        android:background="@color/colorButton"
         android:text="/"
         android:textSize="25sp" />
 </RelativeLayout>
