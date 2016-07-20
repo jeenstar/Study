@@ -7,16 +7,26 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/edit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="여기다 입력 Korea"
-        />
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
+        android:hint="Upper Text"
+        android:textSize="30sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="입력완료"/>
+        android:background="#000000"
+        android:layout_margin="30sp"
+        android:padding="30sp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"/>
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lower Text"
+        android:textSize="30sp"/>
 
 
 </LinearLayout>
