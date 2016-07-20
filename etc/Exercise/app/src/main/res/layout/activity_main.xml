@@ -6,27 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:text="Hello"
+    <EditText
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20pt"
-        android:textColor="#ff0000"
-        android:textStyle="italic"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="안녕하세요!"
-        android:textSize="20sp"
-        android:background="#0000ff"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Good Morning!"
-        android:textSize="5mm"
-        android:textColor="#8000ff00"
-        android:typeface="serif"
+        android:hint="여기다 입력 Korea"
         />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="입력완료"/>
 
 
 </LinearLayout>
