@@ -3,37 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/chulsoo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="철수"
-        android:textSize="30sp"/>
-    <TextView
-        android:id="@+id/younghee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/chulsoo"
-        android:text="영희"
-        android:textSize="20sp"/>
-    <TextView
-        android:id="@+id/mongryong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="몽룡"
-        android:layout_below="@id/younghee"
-        android:layout_alignParentRight="true"
-        android:textSize="30sp"/>
-    <TextView
-        android:id="@+id/chunhyang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/mongryong"
-        android:layout_toLeftOf="@id/mongryong"
-        android:text="춘향"
-        android:textSize="20sp"/>
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout1">
 
 
 </RelativeLayout>
