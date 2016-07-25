@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_size;
     private Button btn_clear;
 
-    private Color select_color;
+    private int select_color;
     private int select_size;
 
     ArrayList<Vertex> arVertex;
@@ -51,15 +51,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class Vertex {
-        Vertex(float ax, float ay, boolean ad) {
+        Vertex(float ax, float ay, boolean ad, int color ,int size) {
             x = ax;
             y = ay;
             Draw = ad;
+            this.select_color = color;
+            this.select_size = size;
+
+
         }
 
         float x;
         float y;
         boolean Draw;
+        int select_color;
+        int select_size;
+
     }
 
 
@@ -70,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
             super(context);
 
             mPaint = new Paint();
-            mPaint.setColor(Color.BLACK);
-            mPaint.setStrokeWidth(3);
+            select_color=R.id.color_black;
+            select_size=R.id.size_3;
             mPaint.setAntiAlias(true);
         }
 
@@ -81,8 +88,11 @@ public class MainActivity extends AppCompatActivity {
 
             for (int i = 0; i < arVertex.size(); i++) {
                 if (arVertex.get(i).Draw) {
+                    mPaint.setColor(arVertex.get(i).select_color);
+                    mPaint.setStrokeWidth(arVertex.get(i).select_size);
                     canvas.drawLine(arVertex.get(i - 1).x, arVertex.get(i - 1).y, arVertex.get(i).x,
                             arVertex.get(i).y, mPaint);
+
                 }
             }
         }
@@ -90,11 +100,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onTouchEvent(MotionEvent event) {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                arVertex.add(new Vertex(event.getX(), event.getY(), false));
+                arVertex.add(new Vertex(event.getX(), event.getY(), false,select_color,select_size));
                 return true;
             }
             if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                arVertex.add(new Vertex(event.getX(), event.getY(), true));
+                arVertex.add(new Vertex(event.getX(), event.getY(), true,select_color,select_size));
                 invalidate();
                 return true;
             }
@@ -121,14 +131,16 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void popupmenu_color() {
-        PopupMenu menu_color = new PopupMenu(MainActivity.this, vw);
+        PopupMenu menu_color = new PopupMenu(this, vw);
         menu_color.getMenuInflater().inflate(R.menu.mcolor, menu_color.getMenu());
         menu_color.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.color_red:
-                        vw.mPaint.setColor(getResources().getColor(R.color.color_red));
+                        /*vw.mPaint.setColor(getResources().getColor(R.color.color_red));*/
+                        select_color = R.color.color_red;
+                        arVertex.set()
                         break;
                     case R.id.color_orange:
                         vw.mPaint.setColor(getResources().getColor(R.color.color_orange));
@@ -152,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         vw.mPaint.setColor(getResources().getColor(R.color.color_mint));
                         break;
                 }
+                vw.invalidate();
                 return true;
             }
         });
@@ -199,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
                         vw.mPaint.setStrokeWidth(11);
                         break;
                 }
+                vw.invalidate();
                 return true;
             }
         });

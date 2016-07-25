@@ -25,6 +25,8 @@
     <item
         android:id="@+id/color_mint"
         android:title="mint"/>
-
+    <item
+        android:id="@+id/color_black"
+        android:title="mint"/>
 
 </menu>
