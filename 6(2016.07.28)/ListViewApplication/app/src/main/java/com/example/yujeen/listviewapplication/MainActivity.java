@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.btn) Button btn;
     @BindView(R.id.list) ListView list;
     private MyArrayAdapter adapter;
-    private String[] randomText = {"피카츄","파이리","꼬부기","보라돌이","뚜비","나나","뽀"};
+    private String[] randomText = {"피카츄","파이리","꼬부기","뽀로로","루피","패티","도라에몽"};
+    private int outputNum = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn.setOnClickListener(this);
 
         ArrayList<String> arGeneral = new ArrayList<String>();
-        arGeneral.add("첫번째");
-        arGeneral.add("두번째");
-        arGeneral.add("세번째");
+        arGeneral.add("안드로");
+        arGeneral.add("로이드");
+        arGeneral.add("안연두");
 
         adapter = new MyArrayAdapter(this);
         adapter.setData(arGeneral);
@@ -47,10 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         Random random = new Random();
-        String[] saveText = new String[3];
+        String[] saveText = new String[outputNum];
 
-        for (int i = 0; i < 3; i++) {
-            saveText[i] = randomText[random.nextInt(6)];
+        for (int i = 0; i < outputNum; i++) {
+            saveText[i] = randomText[random.nextInt(randomText.length)];
             for (int j = 0; j < i; j++) {
                 if(saveText[i].equals(saveText[j]))
                     i--;
@@ -58,9 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         List<String> list = new ArrayList<>();
-        list.add(saveText[0]);
-        list.add(saveText[1]);
-        list.add(saveText[2]);
+        for (int i = 0; i < outputNum; i++) {
+            list.add(saveText[i]);
+        }
         adapter.setData(list);
 
     }
