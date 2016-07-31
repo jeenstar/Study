@@ -54,19 +54,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
             selectedPos = position;
             final AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
-            alert.setTitle("물어볼 것이 있어요")
-                    .setMessage(arGeneral.get(position)+":날 정말로 지울건가요??ㅠㅠ")
+            alert.setTitle("물어볼게 있어!!")
+                    .setMessage(arGeneral.get(position)+" : 나 지울거야...??")
                     .setPositiveButton("지울거야", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(MainActivity.this, "정말로 지우다니..힝..",
+                            Toast.makeText(MainActivity.this, "정말로 지우다니..힝..ㅠㅜ",
                                     Toast.LENGTH_SHORT).show();
                             arGeneral.remove(selectedPos);
                             adapter.notifyDataSetChanged();
 
                         }
                     })
-                    .setNegativeButton("안지울게", null)
+                    .setNegativeButton("안지울거야", null)
                     .setCancelable(false)
                     .show();
             return false;
