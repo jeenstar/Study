@@ -4,7 +4,8 @@ package com.example.yujeen.listviewapplication.model;
  * Created by yujeen on 2016. 7. 31..
  */
 public class Content {
-    public String[] randomText = {"피카츄","파이리","꼬부기","뽀로로","루피","패티","도라에몽","잠만보"};
+    public String[] randomText = {"피카츄","파이리","꼬부기","뽀로로","루피","패티","도라에몽","잠만보","하동님"
+    ,"디효닝","숨언닝","우영님"};
     public int outputNum = 3;
 
     //url
@@ -20,7 +21,10 @@ public class Content {
     public String url_Android = "http://www.econovill.com/news/photo/201601/278657_85141_1631.jpg";
     public String url_SleepingBear = "http://vignette4.wikia.nocookie.net/pokemon/images/c/c2/" +
             "143_PGL.png/revision/latest?cb=20131108172015&path-prefix=ko";
-
+    public String url_Hadong = "https://avatars0.githubusercontent.com/u/10957270?v=3&s=400";
+    public String url_Dhyoning = "http://www.disney.co.kr/upload/actor/dc_stitch_character_01.jpg";
+    public String url_SoomSis = "http://cfile22.uf.tistory.com/image/2172D94A558CB0DB40C5EB";
+    public String url_WooZero = "https://avatars2.githubusercontent.com/u/16856660?v=3&s=400";
 
 
 

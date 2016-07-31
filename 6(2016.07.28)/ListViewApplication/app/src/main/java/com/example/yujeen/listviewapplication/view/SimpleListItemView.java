@@ -63,6 +63,14 @@ public class SimpleListItemView extends FrameLayout{
             return content.url_Doraemon;
         }else if(str.equals("잠만보")){
             return content.url_SleepingBear;
+        }else if(str.equals("하동님")){
+            return content.url_Hadong;
+        }else if(str.equals("디효닝")){
+            return content.url_Dhyoning;
+        }else if(str.equals("숨언닝")){
+            return content.url_SoomSis;
+        }else if(str.equals("우영님")){
+            return content.url_WooZero;
         }
         return content.url_Android;
     }
