@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.yujeen.listviewapplication.model.Content;
 import com.example.yujeen.listviewapplication.view.SimpleListItemView;
 
 import java.util.ArrayList;
@@ -23,8 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.btn) Button btn;
     @BindView(R.id.list) ListView list;
     private MyArrayAdapter adapter;
-    private String[] randomText = {"피카츄","파이리","꼬부기","뽀로로","루피","패티","도라에몽"};
-    private int outputNum = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +46,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+        Content content = new Content();
         Random random = new Random();
-        String[] saveText = new String[outputNum];
+        String[] saveText = new String[content.outputNum];
 
-        for (int i = 0; i < outputNum; i++) {
-            saveText[i] = randomText[random.nextInt(randomText.length)];
+        for (int i = 0; i < content.outputNum; i++) {
+            saveText[i] = content.randomText[random.nextInt(content.randomText.length)];
             for (int j = 0; j < i; j++) {
                 if(saveText[i].equals(saveText[j]))
                     i--;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         List<String> list = new ArrayList<>();
-        for (int i = 0; i < outputNum; i++) {
+        for (int i = 0; i < content.outputNum; i++) {
             list.add(saveText[i]);
         }
         adapter.setData(list);
