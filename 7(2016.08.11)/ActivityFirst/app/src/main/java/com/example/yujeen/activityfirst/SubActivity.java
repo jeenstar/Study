@@ -33,13 +33,25 @@ public class SubActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == android.R.id.home){//전단계로 고고
-            finish();
+            Intent intent = new Intent();
+            intent.putExtra("result","성공");
+            setResult(RESULT_OK,intent);
+            finish();//피니쉬가 인텐트보다 앞으로가면 액티비티가 그냥 종료된다음에 데이터가 보내지는거야 그래서
+            //데이터를 먼저 보내준후 피니쉬를 해줘야해!
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public void finish() {
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    public void finish() {//피니쉬가 먼저 실행되어지고 그다음에 온백프레스드 뒤로가기버튼이 실행되는거야!
+        Intent intent = new Intent();
+        intent.putExtra("result","성공");
+        setResult(RESULT_OK,intent);
         super.finish();
         overridePendingTransition(R.anim.in_from_right,R.anim.out_to_right);
         //인스턴트는 바뀐부분만 빌드해줘!그래서 실행에러난거야!

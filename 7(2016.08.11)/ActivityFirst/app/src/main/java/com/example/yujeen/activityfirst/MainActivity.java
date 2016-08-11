@@ -52,4 +52,16 @@ public class MainActivity extends Activity {
             }
         }
     };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK){
+            if(requestCode == Navigator.SUB_ACTIVITY) {
+                String result = data.getStringExtra("result");
+                input.setText(result);
+            }
+        }
+
+    }
 }
