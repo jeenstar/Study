@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KakaoProfile</string>
+    <string name="activity_name">이름 변경</string>
+    <string name="activity_gender">성별 변경</string>
+    <string name="activity_check">확인</string>
+
+</resources>
